@@ -12,7 +12,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [userProfile, setUserProfile] = useState({ name: 'User', role: 'candidate' });
 
-  // Load user data on mount
+
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
@@ -28,22 +28,22 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setShowLogoutModal(false);
-    alert("Logged out successfully! Redirecting to landing page...");
+    alert("Logged out successfully!");
     navigate('/');
   };
 
   const navigationItems = [
     { label: 'Dashboard Workspace', path: '/dashboard', icon: LayoutDashboard },
-    { label: 'Analysis History Log', path: '/history', icon: History },
+    { label: 'Analysis and History', path: '/history', icon: History },
     { label: 'My Profile & Meta', path: '/profile', icon: User },
   ];
 
   return (
     <>
-      {/* SIDEBAR WRAPPER - Dynamic Width Adjustment based on toggle state */}
+    
       <aside className={`fixed top-0 left-0 h-screen bg-slate-950 border-r border-slate-800/80 flex flex-col justify-between z-30 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'}`}>
         
-        {/* Floating Toggle Toggle Button matching image_c99285.png and image_c992e8.png */}
+       
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="absolute top-5 -right-3.5 w-7 h-7 bg-slate-900 border border-slate-800 text-slate-400 hover:text-white rounded-full flex items-center justify-center cursor-pointer shadow-md z-40"
@@ -107,7 +107,6 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
             )}
           </div>
 
-          {/* Clean Logout Trigger Button */}
           <button
             onClick={() => setShowLogoutModal(true)}
             title={isCollapsed ? 'Logout' : ''}
@@ -121,7 +120,6 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         </div>
       </aside>
 
-      {/* 2. STATE-CONTROLLED CONFIRMATION LOGOUT DIALOG BOX */}
       {showLogoutModal && (
         <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-800 w-full max-w-md rounded-2xl shadow-2xl p-6 relative">
@@ -145,7 +143,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
               </div>
             </div>
 
-            {/* Action Buttons Layout (Left: Cancel, Right: Logout) */}
+          
             <div className="flex items-center justify-between gap-4 pt-4 border-t border-slate-800/60">
               <button
                 onClick={() => setShowLogoutModal(false)}
