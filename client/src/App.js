@@ -34,19 +34,23 @@ function PageContainer() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-950 text-white font-sans overflow-x-hidden relative selection:bg-purple-500 selection:text-white">
       
+      {/* Background Ambient Gradient Glow */}
       {!showSidebarLayout && (
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-gradient-to-b from-purple-900/20 via-indigo-900/10 to-transparent blur-3xl pointer-events-none z-0" />
       )}
       
+      {/* Conditional Navbar vs Sidebar Layout Selection */}
       {!showSidebarLayout ? (
         <Navbar />
       ) : (
         <Sidebar isCollapsed={sidebarCollapsed} setIsCollapsed={setSidebarCollapsed} />
       )}
 
+      {/* Main App Workspace Channels */}
       <main className={`flex-grow relative z-10 transition-all duration-300 ${showSidebarLayout ? (sidebarCollapsed ? 'pl-20 pt-6' : 'pl-64 pt-6') : ''}`}>
         <Routes>
           
+          {/* Public Hero Landing Components Node */}
           <Route path="/" element={
             <>
               <Hero />
@@ -62,11 +66,11 @@ function PageContainer() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           
+          {/* Authenticated Workspace Core Panels */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analysis" element={<Analysis />} />
           <Route path="/history" element={<History />} /> 
           <Route path="/recruiter" element={<Recruiter />} />
-
 
           <Route path="/profile" element={
             <div className="p-8 text-left max-w-5xl">
@@ -78,7 +82,11 @@ function PageContainer() {
         </Routes>
       </main>
 
-      {!showSidebarLayout && <Footer />}
+      {/* 🌟 UPDATED: Removed the conditional guard wrapper so the Footer mounts on every single view page.
+          We wrap it in a dynamic container div so it shifts right to stay aligned when the sidebar layout is active! */}
+      <div className={`transition-all duration-300 relative z-10 ${showSidebarLayout ? (sidebarCollapsed ? 'pl-20' : 'pl-64') : ''}`}>
+        <Footer />
+      </div>
       
     </div>
   );
