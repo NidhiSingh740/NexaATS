@@ -15,6 +15,7 @@ import Signup from './components/Signup';
 import Dashboard from './pages/Dashboard';
 import Analysis from './pages/Analysis';
 import History from './pages/History'; 
+import Recruiter from './pages/Recruiter';
 
 function PageContainer() {
   const location = useLocation();
@@ -63,8 +64,10 @@ function PageContainer() {
           
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/analysis" element={<Analysis />} />
-          <Route path="/history" element={<History />} /> {/* 🌟 Converted placeholder to live History component */}
-          
+          <Route path="/history" element={<History />} /> 
+          <Route path="/recruiter" element={<Recruiter />} />
+
+
           <Route path="/profile" element={
             <div className="p-8 text-left max-w-5xl">
               <h1 className="text-3xl font-black text-white">Account Configuration Meta</h1>

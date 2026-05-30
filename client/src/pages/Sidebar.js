@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { 
-  LayoutDashboard, History, User, 
+  LayoutDashboard, History, User, Users, // 🌟 Imported Users Icon
   LogOut, Cpu, AlertTriangle, X,
   ChevronLeft, ChevronRight
 } from 'lucide-react';
@@ -11,7 +11,6 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
   const location = useLocation();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [userProfile, setUserProfile] = useState({ name: 'User', role: 'candidate' });
-
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -32,18 +31,18 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
     navigate('/');
   };
 
+  // 🌟 Added 'Recruiter Workspace' route entry path directly to array mapping
   const navigationItems = [
     { label: 'Dashboard Workspace', path: '/dashboard', icon: LayoutDashboard },
     { label: 'Analysis and History', path: '/history', icon: History },
+    { label: 'Recruiter Workspace', path: '/recruiter', icon: Users },
     { label: 'My Profile & Meta', path: '/profile', icon: User },
   ];
 
   return (
     <>
-    
       <aside className={`fixed top-0 left-0 h-screen bg-slate-950 border-r border-slate-800/80 flex flex-col justify-between z-30 transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'}`}>
         
-       
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
           className="absolute top-5 -right-3.5 w-7 h-7 bg-slate-900 border border-slate-800 text-slate-400 hover:text-white rounded-full flex items-center justify-center cursor-pointer shadow-md z-40"
@@ -76,7 +75,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
                 <Link
                   key={item.path}
                   to={item.path}
-                  title={isCollapsed ? item.label : ''} // Tooltip tooltip on collapse mode
+                  title={isCollapsed ? item.label : ''}
                   className={`flex items-center rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
                     isCollapsed ? 'justify-center p-3' : 'px-4 py-3 gap-3 whitespace-nowrap'
                   } ${
@@ -143,7 +142,6 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
               </div>
             </div>
 
-          
             <div className="flex items-center justify-between gap-4 pt-4 border-t border-slate-800/60">
               <button
                 onClick={() => setShowLogoutModal(false)}

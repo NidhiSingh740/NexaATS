@@ -6,6 +6,7 @@ require('dotenv').config();
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const analysisRoutes = require('./routes/analysis');
+const recruiterRoutes = require('./routes/recruiter');
 
 connectDB();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/analysis', analysisRoutes);
+app.use('/api/recruiter', recruiterRoutes);
 
 app.get('/', (req, res) => {
   res.send('🚀 ResumeIQ API Backend Is Running Stable and Secure.');
