@@ -31,12 +31,12 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
     navigate('/');
   };
 
-  // 🌟 Added 'Recruiter Workspace' route entry path directly to array mapping
+  
   const navigationItems = [
     { label: 'Dashboard Workspace', path: '/dashboard', icon: LayoutDashboard },
     { label: 'Analysis and History', path: '/history', icon: History },
     { label: 'Recruiter Workspace', path: '/recruiter', icon: Users },
-    { label: 'My Profile & Meta', path: '/profile', icon: User },
+    { label: 'My Profile', path: '/profile', icon: User },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         </button>
 
         <div>
-          {/* Header Branding Section */}
+     
           <div className="h-16 flex items-center gap-2.5 px-6 border-b border-slate-900 overflow-hidden whitespace-nowrap">
             <Cpu className="w-6 h-6 text-purple-400 shrink-0" />
             {!isCollapsed && (
@@ -66,7 +66,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
             )}
           </div>
 
-          {/* Navigation Links Grid */}
+      
           <nav className="p-4 space-y-1.5 mt-4">
             {navigationItems.map((item) => {
               const Icon = item.icon;
@@ -92,7 +92,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
           </nav>
         </div>
 
-        {/* Bottom Profile Information Block */}
+       
         <div className="p-4 border-t border-slate-900 space-y-3">
           <div className={`flex items-center px-2 py-1 ${isCollapsed ? 'justify-center' : 'gap-3'}`}>
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center font-bold text-xs text-white shrink-0">

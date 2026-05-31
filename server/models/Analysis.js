@@ -21,10 +21,11 @@ const AnalysisSchema = new mongoose.Schema({
     strengths: [{ type: String }],
     suggestions: [{ type: String }]
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
+  
+  fileMeta: {
+    filename: { type: String, default: "Processed_Resume_Payload.pdf" },
+    fileSize: { type: String, default: "120 KB" }
   }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Analysis', AnalysisSchema);
