@@ -14,7 +14,7 @@ export default function Login() {
     setErrorMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post('${process.env.REACT_APP_API_BASE_URL}/api/auth/login', formData);
       if (response.data.success) {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));

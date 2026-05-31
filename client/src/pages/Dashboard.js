@@ -73,7 +73,7 @@ export default function Dashboard() {
       formData.append('resume', file);
       formData.append('jobDescription', targetJD);
 
-      // --- FIX: Read token from localStorage (set during login)
+ 
       const token = localStorage.getItem('token');
       if (!token) {
         setError('You are not logged in. Please log in and try again.');
@@ -81,18 +81,18 @@ export default function Dashboard() {
         return;
       }
 
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/analysis/evaluate`,
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-            'Authorization': `Bearer ${token}`
-          },
-          // Give the AI pipeline up to 30 seconds before timing out
-          timeout: 30000
-        }
-      );
+   
+const response = await axios.post(
+  `${process.env.REACT_APP_API_BASE_URL}/api/analysis/evaluate`,
+  formData,
+  {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'Authorization': `Bearer ${token}`
+    },
+    timeout: 30000
+  }
+);
 
       if (response.data.success) {
         localStorage.setItem('latestAnalysis', JSON.stringify(response.data.data));

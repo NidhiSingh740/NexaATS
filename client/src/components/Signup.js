@@ -19,7 +19,7 @@ export default function Signup() {
     setErrorMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', formData);
+      const response = await axios.post('${process.env.REACT_APP_API_BASE_URL}/api/auth/signup', formData);
       if (response.data.success) {
         alert("Account created successfully in MongoDB! Redirecting to login...");
         navigate('/login');

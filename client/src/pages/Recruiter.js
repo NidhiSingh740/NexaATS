@@ -50,12 +50,13 @@ export default function RecruiterHub() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/recruiter/batch-rank', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          'Authorization': `Bearer ${token}`
-        }
-      });
+      
+const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/recruiter/batch-rank`, formData, {
+  headers: {
+    'Content-Type': 'multipart/form-data',
+    'Authorization': `Bearer ${token}`
+  }
+});
 
       if (response.data.success) {
         setCandidates(response.data.data);

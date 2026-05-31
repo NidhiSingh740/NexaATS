@@ -19,12 +19,13 @@ export default function History() {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/analysis/history', {
-          headers: { 
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-          }
-        });
+       
+const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/analysis/history`, {
+  headers: { 
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  }
+});
 
         if (response.data && response.data.success) {
           setLogs(response.data.data || []);

@@ -27,6 +27,8 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+
+
 app.listen(PORT, () => {
-  console.log(`🔥 Server runtime listening perfectly on port ${PORT}`);
+  console.log(`Server successfully initialized on port ${PORT}`);
 });
