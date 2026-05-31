@@ -15,13 +15,12 @@ const app = express();
 
 
 const allowedOrigins = [
-  'http://localhost:3000',             
-  'https://nexa-ats.vercel.app'        
+  'http://localhost:3000',
+  'https://nexa-ats.vercel.app'
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-
     if (!origin) return callback(null, true);
     
     if (allowedOrigins.indexOf(origin) !== -1) {
@@ -37,7 +36,7 @@ app.use(cors({
 
 app.use(express.json()); 
 
-s
+
 app.use('/api/auth', authRoutes);
 app.use('/api/analysis', analysisRoutes);
 app.use('/api/recruiter', recruiterRoutes);
