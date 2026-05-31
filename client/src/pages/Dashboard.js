@@ -31,7 +31,7 @@ export default function Dashboard() {
       setLoadingStep(0);
     }
     return () => clearInterval(interval);
-  }, [isAnalyzing]);
+  }, [isAnalyzing, loadingMessages.length]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {

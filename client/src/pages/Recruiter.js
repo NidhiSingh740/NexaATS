@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Files, UploadCloud, CheckCircle, ShieldAlert, Trophy, Filter, UserCheck, Loader2 } from 'lucide-react';
+import { Files, UploadCloud,  Filter, Loader2 } from 'lucide-react';
 import axios from 'axios';
 
 export default function RecruiterHub() {
