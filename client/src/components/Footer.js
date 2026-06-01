@@ -5,17 +5,16 @@ export default function Footer() {
   return (
     <footer className="relative bg-slate-950 border-t border-slate-900/60 pt-16 pb-8 overflow-hidden text-left text-slate-400">
       
-      {/* Premium Tech Grid Mesh + Glowing Cyber-Ambient Underlays */}
+     
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
       <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-600/5 blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute -top-40 right-1/4 w-[500px] h-[500px] bg-indigo-600/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
-        {/* PREMIUM PLUGINS & METRICS GRID */}
+     
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-slate-900">
-          
-          {/* COLUMN 1: PLATFORM BRANDING & MISSION STATEMENT */}
+        
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
               <svg className="w-5 h-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -33,7 +32,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* COLUMN 2: SAFE PUBLIC INFRASTRUCTURE MARKS */}
           <div className="space-y-3">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">Platform</h4>
             <ul className="space-y-2 text-xs font-medium">
@@ -43,7 +41,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* COLUMN 3: DEPLOYED BACKEND STACK INFRASTRUCTURE */}
+         
           <div className="space-y-3">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">Core Engine</h4>
             <ul className="space-y-2 text-xs font-mono text-slate-500">
@@ -53,7 +51,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* COLUMN 4: SYSTEM RUNTIME PERFORMANCE STATUS */}
+      
           <div className="space-y-3">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-400 font-mono">Network Status</h4>
             <div className="p-4 bg-slate-900/30 border border-slate-800/50 rounded-2xl backdrop-blur-sm space-y-1.5">
@@ -69,7 +67,7 @@ export default function Footer() {
 
         </div>
 
-        {/* BOTTOM METADATA LEGAL SECTION */}
+        
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] font-mono font-bold text-slate-600">
           <div>
             &copy; {new Date().getFullYear()} NEXAATS ENGINE CORP. ALL RIGHTS RESERVED.

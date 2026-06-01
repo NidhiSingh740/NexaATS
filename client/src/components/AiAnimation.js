@@ -45,7 +45,7 @@ export default function AiAnimation() {
               <h3 className="text-xl font-bold mb-1 flex items-center gap-2 text-white">
                 <Sparkles className="h-5 w-5 text-purple-400" /> Real-time Vector Parsing
               </h3>
-              <p className="text-sm text-gray-400">Gemini-1.5-flash matching system parsing content in milliseconds.</p>
+              <p className="text-sm text-gray-400">AI matching system parsing content in milliseconds.</p>
             </div>
             
             <div className="space-y-4">
